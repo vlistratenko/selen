@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
@@ -12,5 +13,11 @@ public class MainPage {
         contactsSubTab.click();
 
         return new ContactsPage();
+    }
+
+    public MainPage waitUntilWelcomeMessageIsDisplayed() {
+        $(By.xpath("//*[.='Welcome to AdvisorEngine.']")).waitUntil(Condition.visible, 50000);
+
+        return this;
     }
 }
