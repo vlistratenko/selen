@@ -8,7 +8,7 @@ import pages.LoginPage;
 public class PrimaryTest {
 
     @BeforeAll
-    public void before() {
+    public static void before() {
         Configuration.browserCapabilities.setBrowserName("chrome");
         Configuration.browserCapabilities.setVersion("81");
     }
